@@ -7,7 +7,7 @@ const curryWithBind = (fn) => {
     if (args.length < arity) {
       return $curry.bind(null, ...args);
     }
-    return fn.apply(null, ...args);
+    return fn.apply(null, args);
   };
   return $curry;
 };
@@ -24,7 +24,7 @@ const curryWithBind2 = (fn) => {
 
 const curryWithBind3 = (fn) => {
   return (...args) => {
-    args.length ? curryWithBind3(fn.bind(0, ...args)) : fn();
+    return args.length ? curryWithBind3(fn.bind(0, ...args)) : fn();
   };
 }; // this corry can handle varidaic function
 
