@@ -3,6 +3,7 @@ const throttleWithDate = (fn, delay) => {
   return (...args) => {
     let now = Date.now();
     if (now - prevTime > delay) {
+      prevTime = now;
       fn.call(this, ...args);
     }
   };

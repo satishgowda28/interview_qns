@@ -43,7 +43,8 @@ const composeAsync = (...fn) => {
   return async (...args) =>
     await fn.reduceRight(async (acc, nextFunc) => {
       const arg = await acc;
-      return nextFunc(...(Array.isArray(arg) ? arg : [arg]));
+      const result = await nextFunc(...(Array.isArray(arg) ? arg : [arg]));
+      return result;
     }, Promise.resolve(args));
 };
 

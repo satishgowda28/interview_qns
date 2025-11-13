@@ -16,9 +16,9 @@ const curryWithBind2 = (fn) => {
   console.log({ "fn.length": fn.length });
   return fn.length === 0
     ? fn()
-    : (...p) => {
+    : (p) => {
         console.log(p);
-        return curryWithBind2(fn.bind(null, ...p));
+        return curryWithBind2(fn.bind(null, p));
       };
 };
 
