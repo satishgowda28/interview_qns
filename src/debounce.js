@@ -73,7 +73,7 @@ export const debounceWithUtils = (fn, delay, { immediate = false } = {}) => {
 
   debounce.flush = function () {
     if (timer) {
-      fn.call(that, ...args);
+      fn.call(that, ...funcArgs);
       clearTimeout(timer);
       timer = null;
       funcArgs = that = null;
