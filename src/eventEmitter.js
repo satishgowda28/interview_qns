@@ -13,7 +13,7 @@ class CustomEvent {
     if (!this.events[event]) {
       return this;
     }
-    this.events[events] = this.events[events].filter((fn) => {
+    this.events[event] = this.events[events].filter((fn) => {
       return fn !== cb;
     });
     return this;
