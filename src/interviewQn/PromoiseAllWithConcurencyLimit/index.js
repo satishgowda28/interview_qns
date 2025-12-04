@@ -17,14 +17,6 @@ function promiseAllWithConcurrencyLimit(functions = [], limit = 1) {
       } finally {
         runTaks();
       }
-      // Promise.all(promArray)
-      //   .then((value) => {
-      //     result = [...result, ...value];
-      //   })
-      //   .catch(reject)
-      //   .finally(() => {
-      //     runTaks();
-      //   });
     };
     runTaks();
   });
