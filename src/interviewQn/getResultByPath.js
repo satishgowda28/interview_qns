@@ -38,3 +38,18 @@ getResultByPath("user.address.city", {
     },
   },
 });
+
+function get(objectParam, pathParam, defaultValue) {
+  const pathArray = Array.isArray(pathParam)
+    ? pathParam
+    : pathParam.replace(/\[(\d+)\]/g, ".$1").split(".");
+  let finalValue;
+  finalValue = pathArray.reduce((prev, key, idx) => {
+    return idx === pathArray.length - 1 ? prev?.[key] : prev?.[key] || {};
+  }, objectParam);
+  if (finalValue === undefined && defaultValue) {
+    return defaultValue;
+  }
+  return finalValue;
+}
+get(x, "data.results[1].status[0].type");
