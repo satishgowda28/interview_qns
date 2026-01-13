@@ -1,0 +1,34 @@
+function listFormat(items = [], options) {
+  items = [...items].filter((item) => !!item);
+  let arrLen = items.length - 1;
+  let finalText = "";
+  let appendText = `and ${items.slice(-1)}`;
+  if (options?.sorted) {
+    items = [...items].sort();
+  }
+  if (options?.unique) {
+    items = [...new Set(items)];
+    arrLen = items.length - 1;
+  }
+  if (options?.length && options?.length < items.length && options.length > 0) {
+    arrLen = options?.length;
+    const n = items.length - options.length;
+    appendText = `and ${n} ${n > 1 ? "others" : "other"}`;
+  }
+  if (items.length < 2) {
+    return items[0] || "";
+  }
+
+  for (let i = 0; i < arrLen; i++) {
+    if (items[i]) {
+      if (i === arrLen - 1) {
+        finalText += `${items[i]} `;
+      } else {
+        finalText += `${items[i]}, `;
+      }
+    }
+  }
+  return finalText + appendText;
+}
+
+listFormat(["Bob", "Ben", "Tim", "Jane", "John"], { length: 100 });
