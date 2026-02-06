@@ -20,3 +20,4 @@ const Musician = PersonObj.create({
 });
 
 const p1 = Musician.create({ name: "Satish", instrument: "Guitar" });
+Reflect.ownKeys(p1);

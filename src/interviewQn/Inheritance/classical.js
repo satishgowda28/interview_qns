@@ -23,6 +23,9 @@ const Musician = function (name, instrument) {
 };
 
 inherit(Musician, Person);
+Musician.prototype.sayIntrument = function () {
+  console.log(this.instrument);
+};
 
 const guitarist = new Musician("Satish", "Guitar");
 

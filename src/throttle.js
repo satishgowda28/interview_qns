@@ -12,7 +12,7 @@ const throttleWithDate = (fn, delay) => {
 export const throttleWithTimer = (
   fn,
   delay,
-  { leading = true, trailing = true } = {}
+  { leading = true, trailing = true } = {},
 ) => {
   let isActive = false;
   let prevArgs;

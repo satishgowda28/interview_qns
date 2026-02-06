@@ -15,7 +15,7 @@ export const memoizeOLD = (fn) => {
 export const memoize = (fn) => {
   const cache = new Map();
 
-  return (...args) => {
+  return function (...args) {
     debugger;
     let currentCache = cache;
     for (let i = 0; i < args.length; i++) {
@@ -26,7 +26,7 @@ export const memoize = (fn) => {
 
       if (!currentCache.has(arg)) {
         if (isLast) {
-          currentCache.set(arg, fn(...args));
+          currentCache.set(arg, fn.call(this, ...args));
           return currentCache.get(arg);
         }
         currentCache.set(arg, new Map());
