@@ -1,0 +1,16 @@
+import { describe, expect, test } from "vitest";
+import flatten from ".";
+
+describe("flatten array", () => {
+  test("empty array", () => {
+    expect(flatten([])).toEqual([]);
+  });
+
+  test("nested array", () => {
+    expect(flatten([1, [2]])).toEqual([1, 2]);
+  });
+
+  test("multiple levels of nesting", () => {
+    expect(flatten([1, [2, [3]]])).toEqual([1, 2, 3]);
+  });
+});

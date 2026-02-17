@@ -1,121 +1,82 @@
-## Revision Tracker (Repetition Mode)
+# Frontend Spaced Repetition Tracker
 
-Legend:  
-R1 = 1st Revision (1–2 days)  
-R2 = 2nd Revision (1 week)  
-R3 = 3rd Revision (1 month)
+## Repetition Rules
 
-| Problem                   | R1  | R2  | R3  |
-| ------------------------- | --- | --- | --- |
-| jquery-class-manipulation | [ ] | [ ] | [ ] |
-| middlewares               | [ ] | [ ] | [ ] |
-| get-elements-by-tag-name  | [ ] | [ ] | [ ] |
-| memoize-ii                | [ ] | [ ] | [ ] |
-| memoize                   | [ ] | [ ] | [ ] |
-| get-elements-by-style     | [ ] | [ ] | [ ] |
-| camel-case-keys           | [ ] | [ ] | [ ] |
-| use-mediated-state        | [ ] | [ ] | [ ] |
-| use-media-query           | [ ] | [ ] | [ ] |
-| use-step                  | [ ] | [ ] | [ ] |
-| use-window-size           | [ ] | [ ] | [ ] |
-| use-timeout               | [ ] | [ ] | [ ] |
-| use-set                   | [ ] | [ ] | [ ] |
-| use-key-press             | [ ] | [ ] | [ ] |
-| event-emitter-ii          | [ ] | [ ] | [ ] |
-| event-emitter             | [ ] | [ ] | [ ] |
-| use-object                | [ ] | [ ] | [ ] |
-| use-hover                 | [ ] | [ ] | [ ] |
-| use-interval              | [ ] | [ ] | [ ] |
-| use-debounce              | [ ] | [ ] | [ ] |
-| use-breakpoint            | [ ] | [ ] | [ ] |
-| intersection-with         | [ ] | [ ] | [ ] |
-| intersection-by           | [ ] | [ ] | [ ] |
-| use-map                   | [ ] | [ ] | [ ] |
-| use-countdown             | [ ] | [ ] | [ ] |
-| promise-resolve           | [ ] | [ ] | [ ] |
-| promise-any               | [ ] | [ ] | [ ] |
-| promise-timeout           | [ ] | [ ] | [ ] |
-| map-async                 | [ ] | [ ] | [ ] |
-| is-empty                  | [ ] | [ ] | [ ] |
-| promise-with-resolvers    | [ ] | [ ] | [ ] |
-| promisify-ii              | [ ] | [ ] | [ ] |
-| promisify                 | [ ] | [ ] | [ ] |
-| promise-merge             | [ ] | [ ] | [ ] |
-| make-counter-ii           | [ ] | [ ] | [ ] |
-| deep-clone                | [ ] | [ ] | [ ] |
-| limit                     | [ ] | [ ] | [ ] |
-| use-query                 | [ ] | [ ] | [ ] |
-| promise-all               | [ ] | [ ] | [ ] |
-| debounce-ii               | [ ] | [ ] | [ ] |
-| data-merging              | [ ] | [ ] | [ ] |
-| throttle                  | [ ] | [ ] | [ ] |
-| debounce                  | [ ] | [ ] | [ ] |
-| curry-ii                  | [ ] | [ ] | [ ] |
-| union-by                  | [ ] | [ ] | [ ] |
-| flatten                   | [ ] | [ ] | [ ] |
-| use-array                 | [ ] | [ ] | [ ] |
-| group-by                  | [ ] | [ ] | [ ] |
-| count-by                  | [ ] | [ ] | [ ] |
-| promise-all-settled       | [ ] | [ ] | [ ] |
-| classnames                | [ ] | [ ] | [ ] |
-| list-format               | [ ] | [ ] | [ ] |
-| use-event-listener        | [ ] | [ ] | [ ] |
-| use-click-outside         | [ ] | [ ] | [ ] |
-| curry                     | [ ] | [ ] | [ ] |
-| array-concat              | [ ] | [ ] | [ ] |
-| use-counter-ii            | [ ] | [ ] | [ ] |
-| type-utilities-ii         | [ ] | [ ] | [ ] |
-| use-click-anywhere        | [ ] | [ ] | [ ] |
-| use-previous              | [ ] | [ ] | [ ] |
-| use-effect-once           | [ ] | [ ] | [ ] |
-| use-boolean-ii            | [ ] | [ ] | [ ] |
-| use-default               | [ ] | [ ] | [ ] |
-| sum                       | [ ] | [ ] | [ ] |
-| use-state-with-reset      | [ ] | [ ] | [ ] |
-| use-toggle                | [ ] | [ ] | [ ] |
-| use-focus                 | [ ] | [ ] | [ ] |
-| use-cycle                 | [ ] | [ ] | [ ] |
-| size                      | [ ] | [ ] | [ ] |
-| cycle                     | [ ] | [ ] | [ ] |
-| compose                   | [ ] | [ ] | [ ] |
-| intersection              | [ ] | [ ] | [ ] |
-| promise-race              | [ ] | [ ] | [ ] |
-| jquery-css                | [ ] | [ ] | [ ] |
-| function-bind             | [ ] | [ ] | [ ] |
-| array-reduce              | [ ] | [ ] | [ ] |
-| array-map                 | [ ] | [ ] | [ ] |
-| array-filter              | [ ] | [ ] | [ ] |
-| array-at                  | [ ] | [ ] | [ ] |
-| singleton                 | [ ] | [ ] | [ ] |
-| use-counter               | [ ] | [ ] | [ ] |
-| use-boolean               | [ ] | [ ] | [ ] |
-| unique-array              | [ ] | [ ] | [ ] |
-| range                     | [ ] | [ ] | [ ] |
-| promise-reject            | [ ] | [ ] | [ ] |
-| once                      | [ ] | [ ] | [ ] |
-| object-map                | [ ] | [ ] | [ ] |
-| min-by                    | [ ] | [ ] | [ ] |
-| max-by                    | [ ] | [ ] | [ ] |
-| in-range                  | [ ] | [ ] | [ ] |
-| get                       | [ ] | [ ] | [ ] |
-| from-pairs                | [ ] | [ ] | [ ] |
-| fill                      | [ ] | [ ] | [ ] |
-| function-call             | [ ] | [ ] | [ ] |
-| find-last-index           | [ ] | [ ] | [ ] |
-| find-index                | [ ] | [ ] | [ ] |
-| drop-while                | [ ] | [ ] | [ ] |
-| drop-right-while          | [ ] | [ ] | [ ] |
-| function-apply            | [ ] | [ ] | [ ] |
-| difference                | [ ] | [ ] | [ ] |
-| compact                   | [ ] | [ ] | [ ] |
-| chunk                     | [ ] | [ ] | [ ] |
-| cancellable-timeout       | [ ] | [ ] | [ ] |
-| cancellable-interval      | [ ] | [ ] | [ ] |
-| array-square              | [ ] | [ ] | [ ] |
-| sleep                     | [ ] | [ ] | [ ] |
-| number-of-arguments       | [ ] | [ ] | [ ] |
-| mean                      | [ ] | [ ] | [ ] |
-| make-counter              | [ ] | [ ] | [ ] |
-| function-length           | [ ] | [ ] | [ ] |
-| clamp                     | [ ] | [ ] | [ ] |
-| type-utilities            | [ ] | [ ] | [ ] |
+- **R1** → 1–2 days after solving
+- **R2** → 7 days after R1
+- **R3** → 30 days after R2
+
+**Status**
+
+- [ ] Not done
+- [R] Smooth (≤ 5 min)
+- [S] Struggled
+- [W] Weak (stuck / looked at solution)
+
+**Daily Workflow**
+
+1. Check today's due items
+2. Solve from memory
+3. Update status
+4. If `[W]` → add to `weak-problems.md`
+
+---
+
+## Tracker
+
+| Index | Problem             | R1  | R2  | R3  | Last Status |
+| ----- | ------------------- | --- | --- | --- | ----------- |
+| 01    | middlewares         | [ ] | [ ] | [ ] |             |
+| 02    | memoize             | [ ] | [ ] | [ ] |             |
+| 03    | memoize-ii          | [ ] | [ ] | [ ] |             |
+| 04    | event-emitter       | [ ] | [ ] | [ ] |             |
+| 05    | event-emitter-ii    | [ ] | [ ] | [ ] |             |
+| 06    | promise-all         | [ ] | [ ] | [ ] |             |
+| 07    | promise-any         | [ ] | [ ] | [ ] |             |
+| 08    | promise-race        | [ ] | [ ] | [ ] |             |
+| 09    | promise-all-settled | [ ] | [ ] | [ ] |             |
+| 10    | promise-timeout     | [ ] | [ ] | [ ] |             |
+| 11    | limit               | [ ] | [ ] | [ ] |             |
+| 12    | map-async           | [ ] | [ ] | [ ] |             |
+| 13    | debounce            | [ ] | [ ] | [ ] |             |
+| 14    | debounce-ii         | [ ] | [ ] | [ ] |             |
+| 15    | throttle            | [ ] | [ ] | [ ] |             |
+| 16    | deep-clone          | [ ] | [ ] | [ ] |             |
+| 17    | curry               | [ ] | [ ] | [ ] |             |
+| 18    | curry-ii            | [ ] | [ ] | [ ] |             |
+| 19    | compose             | [ ] | [ ] | [ ] |             |
+| 20    | once                | [ ] | [ ] | [ ] |             |
+| 21    | make-counter        | [ ] | [ ] | [ ] |             |
+| 22    | make-counter-ii     | [ ] | [ ] | [ ] |             |
+| 23    | function-bind       | [ ] | [ ] | [ ] |             |
+| 24    | function-call       | [ ] | [ ] | [ ] |             |
+| 25    | function-apply      | [ ] | [ ] | [ ] |             |
+| 26    | use-debounce        | [ ] | [ ] | [ ] |             |
+| 27    | use-interval        | [ ] | [ ] | [ ] |             |
+| 28    | use-timeout         | [ ] | [ ] | [ ] |             |
+| 29    | use-previous        | [ ] | [ ] | [ ] |             |
+| 30    | use-event-listener  | [ ] | [ ] | [ ] |             |
+| 31    | use-click-outside   | [ ] | [ ] | [ ] |             |
+| 32    | use-media-query     | [ ] | [ ] | [ ] |             |
+| 33    | use-window-size     | [ ] | [ ] | [ ] |             |
+| 34    | group-by            | [ ] | [ ] | [ ] |             |
+| 35    | count-by            | [ ] | [ ] | [ ] |             |
+| 36    | [flatten][36]       | [ ] | [ ] | [ ] |             |
+| 37    | union-by            | [ ] | [ ] | [ ] |             |
+| 38    | difference          | [ ] | [ ] | [ ] |             |
+| 39    | chunk               | [ ] | [ ] | [ ] |             |
+| 40    | compact             | [ ] | [ ] | [ ] |             |
+| 41    | range               | [ ] | [ ] | [ ] |             |
+| 42    | unique-array        | [ ] | [ ] | [ ] |             |
+| 43    | classnames          | [ ] | [ ] | [ ] |             |
+| 44    | singleton           | [ ] | [ ] | [ ] |             |
+| 45    | camel-case-keys     | [ ] | [ ] | [ ] |             |
+| 46    | data-merging        | [ ] | [ ] | [ ] |             |
+| 47    | object-map          | [ ] | [ ] | [ ] |             |
+| 48    | min-by              | [ ] | [ ] | [ ] |             |
+| 49    | max-by              | [ ] | [ ] | [ ] |             |
+| 50    | get                 | [ ] | [ ] | [ ] |             |
+| 51    | type-utilities      | [ ] | [ ] | [ ] |             |
+| 52    | type-utilities-ii   | [ ] | [ ] | [ ] |             |
+
+[36]: ./flatten/README.md
