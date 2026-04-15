@@ -56,3 +56,12 @@ function flattenIterative(input) {
   return result.reverse();
 }
 flattenIterative([1, [2, [1, 2]], [123, [3, [123]]]]);
+
+function flatenArray(arr = []) {
+  let value = arr;
+  while (value.some(Array.isArray)) {
+    value = [].concat(...value);
+  }
+  return value;
+}
+flatenArray([1, [2, 3]]);

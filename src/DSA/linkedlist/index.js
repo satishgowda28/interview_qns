@@ -157,6 +157,12 @@ class SinglyLinkedList {
     }
     return this;
   }
+  rotate() {
+    let temp = this.head;
+    this.head = temp.next;
+    this.tail = temp;
+    this.tail.next = null;
+  }
 }
 
 var list = new SinglyLinkedList();

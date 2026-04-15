@@ -38,7 +38,7 @@
 | 10    | promise-timeout       | [ ] | [ ] | [ ] |             |
 | 11    | limit                 | [ ] | [ ] | [ ] |             |
 | 12    | map-async             | [ ] | [ ] | [ ] |             |
-| 13    | [debounce][13]        | [ ] | [ ] | [ ] |             |
+| 13    | [debounce][13]        | [x] | [ ] | [ ] |             |
 | 14    | debounce-ii           | [ ] | [ ] | [ ] |             |
 | 15    | throttle              | [ ] | [ ] | [ ] |             |
 | 16    | deep-clone            | [ ] | [ ] | [ ] |             |
@@ -61,7 +61,7 @@
 | 33    | use-window-size       | [ ] | [ ] | [ ] |             |
 | 34    | group-by              | [ ] | [ ] | [ ] |             |
 | 35    | count-by              | [ ] | [ ] | [ ] |             |
-| 36    | [flatten][36]         | [X] | [ ] | [ ] |             |
+| 36    | [flatten][36]         | [x] | [ ] | [ ] |             |
 | 37    | union-by              | [ ] | [ ] | [ ] |             |
 | 38    | difference            | [ ] | [ ] | [ ] |             |
 | 39    | chunk                 | [ ] | [ ] | [ ] |             |
