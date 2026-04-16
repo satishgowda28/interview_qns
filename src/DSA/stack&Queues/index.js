@@ -38,3 +38,35 @@ class Stack {
     return fNode.value;
   }
 }
+
+class Queue {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.size = 0;
+  }
+  enqueue(val) {
+    const node = new NodeElem(val);
+    if (this.first === null) {
+      this.first = node;
+      this.last = node;
+    } else {
+      this.last.next = node;
+      this.last = node;
+    }
+    return ++this.size;
+  }
+  dequeue() {
+    if (this.size === 0) {
+      return null;
+    }
+    const fNode = this.first;
+    this.first = fNode.next;
+    this.size--;
+    if (this.size === 0) {
+      this.first = null;
+      this.last = null;
+    }
+    return fNode.value;
+  }
+}
