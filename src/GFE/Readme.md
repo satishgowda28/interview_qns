@@ -39,7 +39,7 @@
 | 11    | limit                 | [ ] | [ ] | [ ] |             |
 | 12    | map-async             | [ ] | [ ] | [ ] |             |
 | 13    | [debounce][13]        | [x] | [ ] | [ ] |             |
-| 14    | debounce-ii           | [ ] | [ ] | [ ] |             |
+| 14    | [debounce-ii][14]     | [ ] | [ ] | [ ] |             |
 | 15    | throttle              | [ ] | [ ] | [ ] |             |
 | 16    | deep-clone            | [ ] | [ ] | [ ] |             |
 | 17    | curry                 | [ ] | [ ] | [ ] |             |
@@ -81,4 +81,5 @@
 | 53    | get-elements-by-style | [ ] | [ ] | [ ] |             |
 
 [13]: ./debounce/1/Readme.md
+[14]: ./debounce//README.md
 [36]: ./flatten/README.md
