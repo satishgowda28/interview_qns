@@ -76,7 +76,26 @@ class BST {
       }
     }
   }
-  secondLargest() {}
+  findSecondLargest() {
+    let currentNode = this.root;
+    while (true) {
+      if (
+        currentNode.right !== null &&
+        currentNode.right.right === null &&
+        currentNode.right.left === null
+      ) {
+        return currentNode.value;
+      }
+      if (currentNode.right === null && currentNode.left !== null) {
+        let target = currentNode.left;
+        while (target.right !== null) {
+          target = target.right;
+        }
+        target.value;
+      }
+      currentNode = currentNode.right;
+    }
+  }
   isValidBST(node = this.root, min = -Infinity, max = Infinity) {
     // Base case: We hit the bottom safely
     if (node === null) return true;

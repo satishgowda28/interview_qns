@@ -29,17 +29,17 @@
 | 01    | middlewares           | [ ] | [ ] | [ ] |             |
 | 02    | memoize               | [ ] | [ ] | [ ] |             |
 | 03    | memoize-ii            | [ ] | [ ] | [ ] |             |
-| 04    | event-emitter         | [ ] | [ ] | [ ] |             |
+| 04    | [event-emitter][04]   | [x] | [ ] | [ ] |             |
 | 05    | event-emitter-ii      | [ ] | [ ] | [ ] |             |
-| 06    | promise-all           | [ ] | [ ] | [ ] |             |
+| 06    | [promise-all][06]     | [x] | [ ] | [ ] |             |
 | 07    | promise-any           | [ ] | [ ] | [ ] |             |
 | 08    | promise-race          | [ ] | [ ] | [ ] |             |
 | 09    | promise-all-settled   | [ ] | [ ] | [ ] |             |
 | 10    | promise-timeout       | [ ] | [ ] | [ ] |             |
 | 11    | limit                 | [ ] | [ ] | [ ] |             |
-| 12    | map-async             | [ ] | [ ] | [ ] |             |
+| 12    | [map-async][12]       | [x] | [ ] | [ ] |             |
 | 13    | [debounce][13]        | [x] | [ ] | [ ] |             |
-| 14    | [debounce-ii][14]     | [ ] | [ ] | [ ] |             |
+| 14    | [debounce-ii][14]     | [x] | [ ] | [ ] |             |
 | 15    | throttle              | [ ] | [ ] | [ ] |             |
 | 16    | deep-clone            | [ ] | [ ] | [ ] |             |
 | 17    | curry                 | [ ] | [ ] | [ ] |             |
@@ -81,5 +81,10 @@
 | 53    | get-elements-by-style | [ ] | [ ] | [ ] |             |
 
 [13]: ./debounce/1/Readme.md
-[14]: ./debounce//README.md
+[14]: ./debounce/2/README.md
 [36]: ./flatten/README.md
+---
+[06]: ./promise_all/
+[12]: ./map-async/
+[04]: ./map-async/
+---
