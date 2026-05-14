@@ -1,0 +1,8 @@
+{
+  "babel": false,
+  "esm": true,
+  "env": {
+    "type": "node"
+  },
+  "plugins": ["jsdom-quokka-plugin"]
+}

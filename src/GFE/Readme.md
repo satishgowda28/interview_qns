@@ -32,7 +32,7 @@
 | 04    | [event-emitter][04]   | [x] | [ ] | [ ] |             |
 | 05    | event-emitter-ii      | [ ] | [ ] | [ ] |             |
 | 06    | [promise-all][06]     | [x] | [ ] | [ ] |             |
-| 07    | promise-any           | [ ] | [ ] | [ ] |             |
+| 07    | [promise-any][07]     | [x] | [ ] | [ ] |             |
 | 08    | promise-race          | [ ] | [ ] | [ ] |             |
 | 09    | promise-all-settled   | [ ] | [ ] | [ ] |             |
 | 10    | promise-timeout       | [ ] | [ ] | [ ] |             |
@@ -40,7 +40,7 @@
 | 12    | [map-async][12]       | [x] | [ ] | [ ] |             |
 | 13    | [debounce][13]        | [x] | [ ] | [ ] |             |
 | 14    | [debounce-ii][14]     | [x] | [ ] | [ ] |             |
-| 15    | throttle              | [ ] | [ ] | [ ] |             |
+| 15    | [throttle][15]        | [x] | [ ] | [ ] |             |
 | 16    | deep-clone            | [ ] | [ ] | [ ] |             |
 | 17    | curry                 | [ ] | [ ] | [ ] |             |
 | 18    | curry-ii              | [ ] | [ ] | [ ] |             |
@@ -78,7 +78,10 @@
 | 50    | get                   | [ ] | [ ] | [ ] |             |
 | 51    | type-utilities        | [ ] | [ ] | [ ] |             |
 | 52    | type-utilities-ii     | [ ] | [ ] | [ ] |             |
-| 53    | get-elements-by-style | [ ] | [ ] | [ ] |             |
+| 53    | [get-elements-by-style][53] | [x] | [ ] | [ ] |       |
+| 54    | [use-query][54]       | [x] | [ ] | [ ] |             |
+| 56    | [use-array][56]       | [x] | [ ] | [ ] |             |
+| 57    | [list-format][57]     | [x] | [ ] | [ ] |             |
 
 [13]: ./debounce/1/Readme.md
 [14]: ./debounce/2/README.md
@@ -86,5 +89,12 @@
 ---
 [06]: ./promise_all/
 [12]: ./map-async/
-[04]: ./map-async/
+[04]: ./event_emitter/
 ---
+[54]: ./use_query/
+[15]: ./throttle/
+[53]: ./get-elements-by-style/
+---
+[07]: ./promise-any
+[56]: ./useArray/
+[57]: ./list-format/
