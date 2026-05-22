@@ -27,8 +27,8 @@
 | Index | Problem               | R1  | R2  | R3  | Last Status |
 | ----- | --------------------- | --- | --- | --- | ----------- |
 | 01    | middlewares           | [ ] | [ ] | [ ] |             |
-| 02    | memoize               | [ ] | [ ] | [ ] |             |
-| 03    | memoize-ii            | [ ] | [ ] | [ ] |             |
+| 02    | [memoize][02]         | [x] | [ ] | [ ] |             |
+| 03    | [memoize-ii][03]      | [x] | [ ] | [ ] |             |
 | 04    | [event-emitter][04]   | [x] | [ ] | [ ] |             |
 | 05    | event-emitter-ii      | [ ] | [ ] | [ ] |             |
 | 06    | [promise-all][06]     | [x] | [ ] | [ ] |             |
@@ -82,19 +82,39 @@
 | 54    | [use-query][54]       | [x] | [ ] | [ ] |             |
 | 56    | [use-array][56]       | [x] | [ ] | [ ] |             |
 | 57    | [list-format][57]     | [x] | [ ] | [ ] |             |
+| 58    | [use-map][58]         | [x] | [ ] | [ ] |             |
+| 59    | [promisify][59]       | [x] | [ ] | [ ] |             |
+| 60    | [promisify_ii][60]    | [x] | [ ] | [ ] |             |
+| 61    | [conforms-to][61]     | [x] | [ ] | [ ] |             |
+| 62    | [squash-object][62]   | [x] | [ ] | [ ] |             |
+| 63    | [get-elements-by-class-name][63]   | [x] | [ ] | [ ] |             |
+| 64    | [console-log-history][64]   | [x] | [ ] | [ ] |             |
+| 65    | [html-serializer][65] | [x] | [ ] | [ ] |             |
 
 [13]: ./debounce/1/Readme.md
 [14]: ./debounce/2/README.md
 [36]: ./flatten/README.md
----
+(--------------------------)
 [06]: ./promise_all/
 [12]: ./map-async/
 [04]: ./event_emitter/
----
+(--------------------------)
 [54]: ./use_query/
 [15]: ./throttle/
 [53]: ./get-elements-by-style/
----
+(--------------------------)
 [07]: ./promise-any
 [56]: ./useArray/
 [57]: ./list-format/
+[58]: ./use-map/
+[59]: ./promisify/
+[60]: ./promisify_ii/
+(----21/5/2026----)
+[02]: ./memoize/
+[03]: ./memoize_ii/
+(----22/5/2026----)
+[61]: ./conforms-to/
+[62]: ./squash-object/
+[63]: ./get-elements-by-class-name/
+[64]: ./console-log-history/
+[65]: ./html-serializer/

@@ -3,21 +3,18 @@ function listFormat(items = [], options = {}) {
   if (cleaned.length === 0) {
     return "";
   }
-  if (cleaned.length === 1) {
-    return items.join("");
-  }
   if (options.unique) {
     cleaned = [...new Set(cleaned)];
   }
   if (options.sorted) {
     cleaned.sort();
   }
+  if (cleaned.length === 1) {
+    return cleaned.join("");
+  }
 
   if (
-    options.length &&
-    typeof options.length === "number" &&
-    !Number.isNaN(options.length) &&
-    Number.isFinite(options.length) &&
+    Number.isInteger(options.length) &&
     options.length > 0 &&
     options.length < cleaned.length
   ) {
