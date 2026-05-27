@@ -90,6 +90,10 @@
 | 63    | [get-elements-by-class-name][63]   | [x] | [ ] | [ ] |             |
 | 64    | [console-log-history][64]   | [x] | [ ] | [ ] |             |
 | 65    | [html-serializer][65] | [x] | [ ] | [ ] |             |
+| 67    | [deep-map][67]        | [x] | [ ] | [ ] |             |
+| 68    | [local-storage-with-expiry][68]        | [x] | [ ] | [ ] |             |
+| 69    | [map-with-history][69]| [x] | [ ] | [ ] |             |
+| 70    | [deep-merge][70]| [x] | [ ] | [ ] |             |
 
 [13]: ./debounce/1/Readme.md
 [14]: ./debounce/2/README.md
@@ -118,3 +122,9 @@
 [63]: ./get-elements-by-class-name/
 [64]: ./console-log-history/
 [65]: ./html-serializer/
+(----26/5/2026----)
+[67]: ./deep-map/
+(----27/5/2026----)
+[68]: ./local-storage-with-expiry/
+[69]: ./local-storage-with-expiry/
+[70]: ./deep-merge/

@@ -89,12 +89,12 @@ class DoubleLinkedList {
     }
     return current;
   }
-  set(idx, val) {
-    const node = this.get(idx - 1);
+  set(idx, v) {
+    const node = this.get(idx);
     if (!node) {
-      return null;
+      return false;
     }
-    node.val = val;
+    node.value = v;
     return true;
   }
   insert(idx, val) {

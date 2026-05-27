@@ -160,9 +160,11 @@ class SinglyLinkedList {
   rotate() {
     let temp = this.head;
     this.head = temp.next;
+    this.tail.next = temp;
+    temp.next = null;
     this.tail = temp;
-    this.tail.next = null;
   }
+  reverse() {}
 }
 
 var list = new SinglyLinkedList();
