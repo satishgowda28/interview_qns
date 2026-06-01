@@ -68,7 +68,7 @@
 | 40    | compact               | [ ] | [ ] | [ ] |             |
 | 41    | range                 | [ ] | [ ] | [ ] |             |
 | 42    | unique-array          | [ ] | [ ] | [ ] |             |
-| 43    | classnames            | [ ] | [ ] | [ ] |             |
+| 43    | [classnames][43]      | [x] | [ ] | [ ] |             |
 | 44    | singleton             | [ ] | [ ] | [ ] |             |
 | 45    | camel-case-keys       | [ ] | [ ] | [ ] |             |
 | 46    | data-merging          | [ ] | [ ] | [ ] |             |
@@ -93,7 +93,14 @@
 | 67    | [deep-map][67]        | [x] | [ ] | [ ] |             |
 | 68    | [local-storage-with-expiry][68]        | [x] | [ ] | [ ] |             |
 | 69    | [map-with-history][69]| [x] | [ ] | [ ] |             |
-| 70    | [deep-merge][70]| [x] | [ ] | [ ] |             |
+| 70    | [deep-merge][70]      | [x] | [ ] | [ ] |             |
+| 71    | [use-throttle][71]    | [x] | [ ] | [ ] |             |
+| 72    | [deep-equal][72]      | [x] | [ ] | [ ] |             |
+| 73    | [class-variance-authority][73]      | [x] | [ ] | [ ] |             |
+| 74    | [use-input-control][74]      | [x] | [ ] | [ ] |             |
+| 75    | [lowest-hiding-element][75]  | [x] | [ ] | [ ] |             |
+| 76    | [deep-omit][76]       | [x] | [ ] | [ ] |             |
+| 77    | [promise-merge][77]   | [x] | [ ] | [ ] |             |
 
 [13]: ./debounce/1/Readme.md
 [14]: ./debounce/2/README.md
@@ -128,3 +135,13 @@
 [68]: ./local-storage-with-expiry/
 [69]: ./local-storage-with-expiry/
 [70]: ./deep-merge/
+[71]: ./use-throttle/
+[72]: ./deep-equal/
+(----29/5/2026----)
+[73]: ./class-variance-authority/
+[74]: ./use-input-control/
+[75]: ./lowest-hiding-element/
+[76]: ./deep-omit/
+(----01/6/2026----)
+[43]: ./classnames
+[77]: ./promise-merge
