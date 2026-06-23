@@ -163,7 +163,7 @@
 | 128 | promise-all-settled | [ ] | [ ] | [ ] | |
 | 129 | rate-limiter | [ ] | [ ] | [ ] | |
 | 130 | resumable-interval | [ ] | [ ] | [ ] | |
-| 131 | template-engine | [ ] | [ ] | [ ] | |
+| 131 | [template-engine][131] | [x] | [ ] | [ ] | |
 | 132 | [text-search][78] | [x] | [ ] | [ ] | |
 | 133 | undo-redo-manager | [ ] | [ ] | [ ] | |
 | 134 | use-idle | [ ] | [ ] | [ ] | |
@@ -181,7 +181,7 @@
 | 146 | text-between-nodes | [ ] | [ ] | [ ] | |
 | 147 | [text-search-ii][147] | [ ] | [ ] | [ ] | |
 | 148 | [deep-merge][70] | [x] | [ ] | [ ] | |
-| 149 | html-sanitizer | [ ] | [ ] | [ ] | |
+| 149 | [html-sanitizer][149] | [x] | [ ] | [ ] | |
 | 150 | [map-with-history][69] | [x] | [ ] | [ ] | |
 | 151 | [memoize-ii][03] | [x] | [ ] | [ ] | |
 | 152 | mini-orm | [ ] | [ ] | [ ] | |
@@ -248,3 +248,6 @@
 [85]: ./json-stringify
 [122]: ./identical-dom-trees
 [147]: ./text-search-ii
+[131]: ./template-engine
+(----04/6/2026----)
+[149]: ./html-sanitizer/

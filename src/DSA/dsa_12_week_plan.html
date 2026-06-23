@@ -1,0 +1,214 @@
+
+<style>
+  .plan-root { padding: 1rem 0; font-family: var(--font-sans); color: var(--color-text-primary); }
+  .phase-block { margin-bottom: 2rem; }
+  .phase-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+  .phase-badge { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: var(--border-radius-md); }
+  .phase-title { font-size: 16px; font-weight: 500; }
+  .phase-sub { font-size: 13px; color: var(--color-text-secondary); margin-left: auto; }
+  .weeks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 10px; }
+  .week-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px; cursor: pointer; transition: border-color 0.15s; }
+  .week-card:hover { border-color: var(--color-border-secondary); }
+  .week-card.active { border-color: var(--color-border-primary); }
+  .week-num { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 4px; }
+  .week-topic { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+  .week-problems { font-size: 12px; color: var(--color-text-secondary); }
+  .detail-panel { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-top: 1rem; border: 0.5px solid var(--color-border-tertiary); }
+  .detail-title { font-size: 15px; font-weight: 500; margin-bottom: 12px; }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .detail-section { }
+  .detail-label { font-size: 11px; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+  .detail-list { list-style: none; padding: 0; margin: 0; }
+  .detail-list li { font-size: 13px; color: var(--color-text-secondary); padding: 3px 0; display: flex; gap: 6px; }
+  .detail-list li::before { content: "→"; color: var(--color-text-tertiary); flex-shrink: 0; }
+  .daily-box { background: var(--color-background-primary); border-radius: var(--border-radius-md); padding: 10px 14px; margin-top: 10px; font-size: 13px; color: var(--color-text-secondary); border: 0.5px solid var(--color-border-tertiary); }
+  .daily-box strong { color: var(--color-text-primary); font-weight: 500; }
+  .tip-box { border-left: 2px solid; border-radius: 0; margin-top: 10px; padding: 8px 12px; font-size: 13px; color: var(--color-text-secondary); }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.5rem 0; }
+  .legend { display: flex; gap: 16px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--color-text-secondary); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+</style>
+
+<div class="plan-root">
+  <h2 class="sr-only">12-week DSA plan with pattern-based learning, 30–45 minutes daily</h2>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#5DCAA5"></div> Foundation</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#7F77DD"></div> Core patterns</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#EF9F27"></div> Hard territory</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#D4537E"></div> Consolidation</div>
+  </div>
+
+  <div id="phases"></div>
+</div>
+
+<script>
+const weeks = [
+  {
+    week: 1, phase: 0, topic: "Arrays & Hashmaps", problems: "8 problems",
+    patterns: ["Two Sum variants", "Frequency counting", "Prefix sums"],
+    neetcode: ["Two Sum", "Contains Duplicate", "Valid Anagram", "Group Anagrams"],
+    daily: "15 min attempt → read approach → implement → write WHY in plain English",
+    tip: "Don't memorise code. Memorise the question you ask yourself: 'Do I need fast lookup?' → hashmap."
+  },
+  {
+    week: 2, phase: 0, topic: "Two Pointers", problems: "7 problems",
+    patterns: ["Opposite ends", "Slow/fast pointer", "Partitioning"],
+    neetcode: ["Valid Palindrome", "3Sum", "Container With Most Water", "Trapping Rain Water"],
+    daily: "Same loop. Mark which problems you had to look up — revisit them on day 7.",
+    tip: "Two pointers almost always appear when the array is sorted or you're comparing from both ends."
+  },
+  {
+    week: 3, phase: 0, topic: "Sliding Window", problems: "7 problems",
+    patterns: ["Fixed window", "Variable window", "String window"],
+    neetcode: ["Best Time to Buy/Sell Stock", "Longest Substring Without Repeat", "Minimum Window Substring"],
+    daily: "After each problem, write: 'What was the window condition?' — this is the whole pattern.",
+    tip: "Sliding window = Two pointers where you expand right and shrink left based on a condition."
+  },
+  {
+    week: 4, phase: 1, topic: "Binary Search", problems: "8 problems",
+    patterns: ["Classic search", "Search on answer space", "Rotated arrays"],
+    neetcode: ["Binary Search", "Search in Rotated Array", "Find Minimum in Rotated Array", "Koko Eating Bananas"],
+    daily: "Focus on 'search on answer space' — it's unintuitive but shows up constantly.",
+    tip: "When you see 'find minimum/maximum X that satisfies condition', think binary search on the answer."
+  },
+  {
+    week: 5, phase: 1, topic: "Stack", problems: "7 problems",
+    patterns: ["Matching brackets", "Monotonic stack", "Min/max tracking"],
+    neetcode: ["Valid Parentheses", "Min Stack", "Daily Temperatures", "Largest Rectangle in Histogram"],
+    daily: "Monotonic stack is hard conceptually. Spend 2 days on Daily Temperatures alone if needed.",
+    tip: "Stack = you need to remember the last-seen thing, or find the next greater/smaller element."
+  },
+  {
+    week: 6, phase: 1, topic: "Trees — BFS & DFS", problems: "10 problems",
+    patterns: ["Inorder/preorder/postorder", "Level order BFS", "Tree construction"],
+    neetcode: ["Invert Binary Tree", "Max Depth", "Same Tree", "Level Order Traversal", "Validate BST"],
+    daily: "Write recursive DFS first, then try iterative with a stack. Both matter.",
+    tip: "BFS = queue, DFS = recursion (or stack). If they ask 'level by level' — it's BFS."
+  },
+  {
+    week: 7, phase: 1, topic: "Graphs", problems: "8 problems",
+    patterns: ["BFS/DFS on graph", "Connected components", "Cycle detection"],
+    neetcode: ["Number of Islands", "Clone Graph", "Course Schedule", "Pacific Atlantic Water Flow"],
+    daily: "Build a visited set every time. That's the pattern. Don't skip it.",
+    tip: "Every graph problem is either: find connected components, find a path, or detect a cycle."
+  },
+  {
+    week: 8, phase: 1, topic: "Heaps & Priority Queue", problems: "6 problems",
+    patterns: ["Top K elements", "Merge K sorted", "Median finding"],
+    neetcode: ["Kth Largest Element", "Top K Frequent Elements", "Find Median from Data Stream"],
+    daily: "JS doesn't have a built-in heap — implement a simple min-heap once and reuse it.",
+    tip: "Heap = whenever you need the 'Kth' something, or need to repeatedly get the min/max efficiently."
+  },
+  {
+    week: 9, phase: 2, topic: "DP — 1D", problems: "7 problems",
+    patterns: ["Fibonacci-style", "House Robber pattern", "Climbing Stairs variants"],
+    neetcode: ["Climbing Stairs", "House Robber", "Longest Increasing Subsequence", "Word Break"],
+    daily: "Always define dp[i] precisely in English before writing code. That sentence IS the solution.",
+    tip: "Don't memorise DP solutions. Ask: what decision am I making at each step, and what do I carry forward?"
+  },
+  {
+    week: 10, phase: 2, topic: "DP — 2D", problems: "6 problems",
+    patterns: ["Grid paths", "Subsequence matching", "Knapsack"],
+    neetcode: ["Unique Paths", "Coin Change", "Longest Common Subsequence", "0/1 Knapsack"],
+    daily: "Draw the DP table on paper. Seriously. Before writing any code.",
+    tip: "2D DP = you have two changing variables. The table visualises every subproblem at once."
+  },
+  {
+    week: 11, phase: 2, topic: "Backtracking", problems: "6 problems",
+    patterns: ["Subsets", "Permutations", "Constraint satisfaction"],
+    neetcode: ["Subsets", "Permutations", "Combination Sum", "Word Search"],
+    daily: "Draw the decision tree before coding. If you can't draw it, you can't code it.",
+    tip: "Backtracking = DFS + undo. The 'undo' step is what makes it powerful and confusing."
+  },
+  {
+    week: 12, phase: 3, topic: "Consolidation", problems: "Mixed review",
+    patterns: ["Revisit hard problems", "Mock interview format", "Pattern identification drills"],
+    neetcode: ["Revisit all problems you looked up", "Do 3 timed mocks (45 min each)", "Write your own pattern cheatsheet"],
+    daily: "No new patterns. Only revision and mock interviews. Timed — no cheating.",
+    tip: "By week 12, the goal is speed of pattern recognition, not correctness from scratch."
+  }
+];
+
+const phases = [
+  { label: "Phase 1", name: "Foundation", weeks: [1,2,3], color: "#5DCAA5", textColor: "#085041", bg: "#E1F5EE" },
+  { label: "Phase 2", name: "Core patterns", weeks: [4,5,6,7,8], color: "#7F77DD", textColor: "#3C3489", bg: "#EEEDFE" },
+  { label: "Phase 3", name: "Hard territory", weeks: [9,10,11], color: "#EF9F27", textColor: "#633806", bg: "#FAEEDA" },
+  { label: "Phase 4", name: "Consolidation", weeks: [12], color: "#D4537E", textColor: "#72243E", bg: "#FBEAF0" },
+];
+
+let activeWeek = null;
+
+function render() {
+  const container = document.getElementById('phases');
+  container.innerHTML = '';
+
+  phases.forEach(phase => {
+    const block = document.createElement('div');
+    block.className = 'phase-block';
+
+    const header = document.createElement('div');
+    header.className = 'phase-header';
+    header.innerHTML = `
+      <span class="phase-badge" style="background:${phase.bg};color:${phase.textColor}">${phase.label}</span>
+      <span class="phase-title">${phase.name}</span>
+      <span class="phase-sub">Weeks ${phase.weeks[0]}–${phase.weeks[phase.weeks.length-1]}</span>
+    `;
+    block.appendChild(header);
+
+    const grid = document.createElement('div');
+    grid.className = 'weeks-grid';
+
+    phase.weeks.forEach(wNum => {
+      const w = weeks[wNum - 1];
+      const card = document.createElement('div');
+      card.className = 'week-card' + (activeWeek === wNum ? ' active' : '');
+      card.innerHTML = `
+        <div class="week-num">Week ${w.week}</div>
+        <div class="week-topic">${w.topic}</div>
+        <div class="week-problems">${w.problems}</div>
+      `;
+      card.addEventListener('click', () => {
+        activeWeek = activeWeek === wNum ? null : wNum;
+        render();
+      });
+      grid.appendChild(card);
+    });
+
+    block.appendChild(grid);
+
+    if (activeWeek && phase.weeks.includes(activeWeek)) {
+      const w = weeks[activeWeek - 1];
+      const detail = document.createElement('div');
+      detail.className = 'detail-panel';
+      detail.innerHTML = `
+        <div class="detail-title">Week ${w.week} — ${w.topic}</div>
+        <div class="detail-grid">
+          <div class="detail-section">
+            <div class="detail-label">Patterns to learn</div>
+            <ul class="detail-list">${w.patterns.map(p => `<li>${p}</li>`).join('')}</ul>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label">Problems (Neetcode 150)</div>
+            <ul class="detail-list">${w.neetcode.map(p => `<li>${p}</li>`).join('')}</ul>
+          </div>
+        </div>
+        <div class="daily-box"><strong>Daily loop:</strong> ${w.daily}</div>
+        <div class="tip-box" style="border-color:${phase.color}; background:${phase.bg}; color:${phase.textColor}">
+          <strong>Key insight:</strong> ${w.tip}
+        </div>
+      `;
+      block.appendChild(detail);
+    }
+
+    container.appendChild(block);
+
+    const div = document.createElement('hr');
+    div.className = 'divider';
+    container.appendChild(div);
+  });
+}
+
+render();
+</script>
